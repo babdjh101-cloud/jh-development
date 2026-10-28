@@ -1,0 +1,741 @@
+# JHDCL — COMPLETE CORPORATE WEBSITE MASTER PROMPT
+
+## 1. ROLE & OBJECTIVE
+
+Act as a senior corporate website architect, premium UI/UX designer, brand identity specialist, frontend engineer, SEO strategist, accessibility expert, and QA engineer.
+
+Build a polished, premium, production-ready bilingual corporate website for:
+
+**J.H. Development Construction Ltd. (JHDCL)**
+
+The website must establish the company as a credible real estate, construction, infrastructure, engineering, and development organization.
+
+This is primarily a **corporate brand and capability website**, not a property listing marketplace or apartment booking platform.
+
+The primary source of truth is the uploaded document:
+
+**JHDCL Short Profile 17-07-26.pdf**
+
+Study the available project files and the PDF carefully before implementing the website. Use the PDF's company information, visual identity, project descriptions, logos, and genuine project imagery wherever appropriate.
+
+Do not invent missing information.
+
+## 2. NON-NEGOTIABLE SOURCE-OF-TRUTH RULES
+
+The uploaded JHDCL PDF is the primary source for company-specific content.
+
+Follow these rules:
+
+1. Use company names, addresses, contact information, leadership details, services, project names, and claims only when supported by the source.
+2. Preserve the distinction between completed, ongoing, and upcoming projects as described in the PDF.
+3. Treat the PDF's project statuses as source-document claims, not independently verified current statuses. Do not describe an old status as current without confirmation.
+4. Do not invent project completion dates, contract values, client testimonials, certifications, awards, employee counts, statistics, financial performance, or partnerships.
+5. Do not invent apartment inventory, property prices, unit sizes, floor plans, booking availability, or property specifications.
+6. Do not invent social media URLs, Google Maps coordinates, registration numbers, official domain names, or email addresses.
+7. Where the source contains conflicting information, flag the conflict for confirmation rather than silently selecting or combining values.
+8. Where information is unavailable, omit it or use a clearly marked placeholder in the code/configuration. Never publish a fabricated value.
+9. Do not rewrite a project description in a way that changes its factual meaning.
+10. Do not present illustrative stock imagery as actual JHDCL projects.
+11. Do not publish private or sensitive information from the PDF, including bank details, personal identification information, private correspondence, financial records, work-order documents, signatures, or other non-public material.
+12. Do not expose confidential information in the frontend source, public asset directory, repository, browser console, or page metadata.
+
+### Important claims requiring confirmation
+
+The PDF contains large-scale claims, including references to more than $1 billion and 9 million square feet of project management. Do not feature these claims as verified marketing statistics unless the company confirms their meaning, scope, and accuracy.
+
+If such claims are not approved, leave them out of the public website.
+
+## 3. BRAND IDENTITY
+
+Use the branding and logo supplied in the uploaded PDF as the primary visual reference.
+
+Requirements:
+
+- Preserve the original logo's proportions, typography, colors, and visual identity.
+- Do not redraw, distort, recolor, or replace the official logo without permission.
+- Extract and use the original logo asset if the project environment supports reliable extraction.
+- If a clean logo file cannot be extracted, request a separate high-quality logo file rather than recreating it inaccurately.
+- Use genuine company/project photographs extracted from appropriate PDF pages or other company-provided assets.
+- Do not include confidential PDF pages or documents as public website images.
+
+### Visual direction
+
+Create a premium, established corporate aesthetic appropriate for a Bangladeshi real estate and infrastructure company.
+
+The visual style should feel:
+
+- Trustworthy
+- Professional
+- Architectural
+- Refined
+- Modern
+- Corporate
+- Confident
+- Long-term and investment-oriented
+
+Use the existing logo to guide the palette. If no clearly established brand palette can be identified, use a restrained proposed palette of deep navy or charcoal, warm white, and subtle gold accents. Treat these colors as a design proposal, not confirmed official brand colors.
+
+Avoid excessive gradients, generic construction templates, cartoon illustrations, oversized decorative effects, and distracting animations.
+
+## 4. WEBSITE LANGUAGE
+
+Build a bilingual website supporting:
+
+- English
+- বাংলা
+
+Requirements:
+
+1. English should be the default language on the initial launch unless the project owner specifies otherwise.
+2. Provide a visible language switcher: EN / বাংলা.
+3. Every major navigation label, heading, button, form label, validation message, and footer item must have a proper translation.
+4. Translate the meaning naturally rather than mechanically translating word by word.
+5. Preserve official company names, project names, email addresses, phone numbers, and other proper nouns accurately.
+6. Changing the language must not reset the current page or lose form state unnecessarily.
+7. Persist the user's language preference using a suitable browser-side mechanism.
+8. Use correct Bengali Unicode text and fonts with strong Bangla rendering support.
+9. Use appropriate HTML language attributes and language-aware page metadata.
+10. Implement a maintainable translation dictionary or equivalent localization structure rather than duplicating entire pages.
+
+Do not mix English and Bangla randomly within a single sentence unless it is a recognized technical term or proper noun.
+
+## 5. COMPANY INFORMATION
+
+Use the following information only as supported by the PDF.
+
+### Display name
+
+J.H. Development Construction Ltd.
+
+The PDF's legal documents also use the name “Jamat Hazera Development Construction Ltd.”
+
+Do not silently assume that the two names have identical legal status. Use “J.H. Development Construction Ltd.” as the primary display name and flag the legal-name discrepancy for company confirmation before publishing legal notices or formal legal statements.
+
+### Company background
+
+The PDF identifies 2018 as the company's founding year.
+
+Describe the company using factual, professional language based on the PDF's stated activities and experience.
+
+Do not invent a founder story, corporate history timeline, or unsupported claims about market leadership.
+
+### Leadership
+
+The PDF identifies Md. Abdul Motaleb Somrat as Managing Director & CEO.
+
+Use the title and spelling as documented. Do not add an unverified biography, photograph, qualification, or personal achievement.
+
+### Head office
+
+House #45, Road #13, Block #D, Banani, Dhaka-1213, Bangladesh.
+
+The PDF lists these contact numbers:
+
+- +880 1754-158 358
+- +880 1927-794 745
+
+The PDF lists these email addresses:
+
+- jhdclsomrat@gmail.com
+- motalebbogra2580@gmail.com
+
+### Corporate office
+
+House #38, Road #3/B, Block #F, Sector-15, Uttara, Dhaka-1230, Bangladesh.
+
+The PDF lists these contact numbers:
+
+- 01863-127119
+- 01757-484404
+
+The PDF also lists the email addresses above.
+
+### Contact discrepancy
+
+The PDF's ending section lists WhatsApp as +880 1754 158 358 and also includes the email jhdcsomrat@gmail.com, which differs from one of the email spellings listed earlier.
+
+Use **+8801754158358** as the preferred WhatsApp contact supplied by the website owner.
+
+Do not silently correct or merge the differing email addresses. Keep them out of any single “official email” designation until the company confirms which address or addresses should be public.
+
+Create a clearly documented configuration file for company contact details so approved changes can be made without searching through many components.
+
+## 6. BUSINESS SERVICES
+
+Create a corporate services section based on the activities documented in the PDF.
+
+Include relevant service categories such as:
+
+1. Residential and commercial real estate
+2. Building construction and development
+3. Interior design
+4. Roads and highways
+5. Railway-related projects
+6. River dredging
+7. Sand filling and land development
+8. Construction materials and stone supply
+9. Infrastructure development
+10. Tender and project-related activities where supported by the source
+
+Use concise, professional descriptions based on the source.
+
+Do not imply that every service is currently available in every location or that every listed activity is independently certified.
+
+Do not create fake service guarantees, project delivery timelines, or pricing.
+
+## 7. WEBSITE STRUCTURE
+
+Build a complete, responsive corporate website with the following sections.
+
+### A. Header and navigation
+
+Include:
+
+- Official company logo
+- Home
+- About Us
+- Services
+- Projects
+- Equipment & Capabilities
+- Leadership
+- Gallery
+- Contact
+- Language switcher
+- A prominent “Contact Us” CTA
+
+Use a clean sticky header if it improves usability. On mobile, use a functional accessible navigation menu.
+
+Avoid adding unsupported navigation items or fake social media links.
+
+### B. Hero section
+
+Create a high-impact architectural hero section using an authentic, approved company/project image whenever available.
+
+Include:
+
+- A strong corporate headline
+- A short factual description of the company's construction, real estate, and infrastructure activities
+- A primary “Explore Our Projects” CTA
+- A secondary “Contact Us” CTA
+
+The headline should establish credibility without making unsupported claims such as “Bangladesh's No. 1 construction company.”
+
+If no suitable genuine project image is available, use a clearly identified temporary architectural placeholder. Do not present a stock image as an actual JHDCL project.
+
+### C. About the company
+
+Include:
+
+- Company overview
+- Background and founding year as documented
+- Main business areas
+- Approach to construction and development, only to the extent supported by the source
+- A factual company profile CTA if an approved public profile download is available
+
+Do not create an unverified mission, vision, values statement, or corporate philosophy. If these are not documented, prepare proposed copy in a configuration or draft section for company approval rather than presenting it as an official statement.
+
+### D. Services
+
+Display the documented service categories in a refined responsive card layout.
+
+Each card should include:
+
+- A relevant icon or approved image
+- Service title
+- Short source-grounded description
+- An appropriate CTA leading to contact or a relevant project
+
+Use consistent card sizes, typography, spacing, and interaction patterns.
+
+### E. Projects
+
+Create a searchable or filterable project portfolio.
+
+Use three categories:
+
+- Completed Projects
+- Ongoing Projects — As Listed in the PDF
+- Upcoming Projects — As Listed in the PDF
+
+Use source-supported project names and descriptions.
+
+Examples appearing in the PDF include:
+
+- Payra Housing Ltd.
+- Payra Punorbason Center
+- Railway Sand Filling in Norail
+- Relivo House Building in Farmgate
+- Square Industry Sand Filling in Gazipur
+- River Block Construction in Bogura
+- Electricity Tower Payling in Rajshahi
+- Airport runway-related projects
+- Roads & Highway in Mirzapur
+- Bangshi River Dredging
+- Old-Brahmaputra River Dredging
+- Naogaon road extension
+- Musapur power plant-related dredging and sand filling
+- Pabna power plant-related dredging and sand filling
+- Dhaka Cantonment Building Development
+- JH Agro Foundation
+- JH General Hospital Ltd.
+- Other listed upcoming infrastructure and land-development projects
+
+These are examples from the source, not a guarantee that the full list or current project status has been verified.
+
+Before publishing each project, verify the exact project name, category, description, image ownership, and publication permission.
+
+Do not fabricate:
+
+- Client logos
+- Completion dates
+- Project values
+- Square footage
+- Locations not documented
+- Project status updates
+- Client endorsements
+
+If a project has no approved photograph, show a tasteful neutral project card instead of attaching an unrelated photograph.
+
+Each project card may open a detail view or detail page if the available information supports it.
+
+Ensure project filters work correctly in both languages.
+
+### F. Equipment & capabilities
+
+Use the PDF's genuine equipment and machinery photographs where appropriate.
+
+Present equipment and capability information only when the relevant asset, equipment type, or description is supported by the source.
+
+Do not invent equipment quantities, ownership, technical specifications, or operational capacity.
+
+Avoid publishing private documents or sensitive information that happens to appear near equipment images in the PDF.
+
+### G. Leadership
+
+Include the documented Managing Director & CEO information.
+
+Use a professional layout with a photograph only if an approved public photograph is available.
+
+Do not generate a fake portrait of the actual executive or invent qualifications and biography details.
+
+If no approved photograph or biography is available, use a clean text-based leadership card.
+
+### H. Group and partnerships
+
+The PDF references organizations and project-related entities.
+
+Only describe an organization as a subsidiary, sister concern, formal partner, client, or affiliated company if the source clearly supports that exact relationship.
+
+Do not assume that every named project organization is a corporate subsidiary or formal partner.
+
+If the relationship is unclear, use neutral wording or omit the item pending confirmation.
+
+### I. Gallery
+
+Create a responsive image gallery using approved company photographs.
+
+Requirements:
+
+- Responsive grid
+- Appropriate image cropping
+- Descriptive alt text
+- Accessible image preview/lightbox if implemented
+- Optimized image loading
+- Consistent aspect ratios where practical
+
+Do not include confidential documents, bank details, private correspondence, signatures, or unrelated personal information.
+
+### J. Contact section
+
+Include:
+
+- Head office
+- Corporate office
+- Approved phone numbers
+- Approved email addresses
+- WhatsApp CTA
+- Contact form
+- Optional map only after verifying the office location
+
+The WhatsApp CTA must use the configured preferred number:
+
++8801754158358
+
+Generate a correctly encoded WhatsApp message link with a sensible prefilled inquiry message.
+
+Do not create a fake contact form submission success message.
+
+If no backend or form service is configured, clearly indicate that form delivery requires configuration. A frontend-only form must not pretend that a message has been delivered.
+
+Use appropriate field validation, loading/error states, spam protection where feasible, and accessible error messages.
+
+### K. Footer
+
+Include:
+
+- Official logo
+- Short factual company description
+- Bilingual navigation links
+- Approved contact information
+- Copyright notice using the current year dynamically
+- Privacy Policy and Terms links only when actual pages exist
+
+Do not invent official social media links or legal policy content.
+
+## 8. DESIGN SYSTEM AND VISUAL QUALITY
+
+Build a coherent design system before creating individual pages.
+
+Define:
+
+- Colors
+- Typography
+- Heading scale
+- Body text scale
+- Spacing system
+- Border radius
+- Shadows
+- Button variants
+- Card variants
+- Responsive breakpoints
+- Motion rules
+
+Use premium architectural photography and spacious layouts.
+
+Use subtle motion such as:
+
+- Soft section reveals
+- Controlled hover states
+- Gentle image transitions
+- Small navigation transitions
+- Reduced-motion-aware animations
+
+Avoid:
+
+- Excessive parallax
+- Constant spinning or bouncing
+- Heavy effects that slow the site
+- Large animations that delay the first meaningful screen
+- Overuse of glassmorphism
+- Fake 3D construction imagery that could misrepresent the company
+
+Respect the user's reduced-motion preference.
+
+Ensure the logo remains clear and undistorted at all screen sizes.
+
+## 9. TECHNICAL IMPLEMENTATION
+
+First inspect the existing project files and preserve a working project structure wherever possible.
+
+If the existing project already has a working stack, continue using it unless a specific technical issue requires a justified change.
+
+For a new or incomplete frontend project, prefer:
+
+- React
+- TypeScript
+- Vite
+- Tailwind CSS, using the version and configuration already supported by the project
+- React Router only if multiple routes are needed
+
+Do not replace working configuration without a clear reason.
+
+Use reusable components and a maintainable project architecture.
+
+Suggested structure, adapted to the actual repository:
+
+src/
+  components/
+  sections/
+  pages/
+  layouts/
+  translations/
+  data/
+  config/
+  hooks/
+  utils/
+  styles/
+  assets/
+
+public/
+  images/
+  fonts/
+  _redirects
+  _headers
+
+Keep the actual source files organized and avoid creating unnecessary abstractions.
+
+Create reusable components for:
+
+- Header
+- Mobile navigation
+- Language switcher
+- Hero
+- Section headings
+- Service cards
+- Project cards
+- Project filters
+- Gallery
+- Leadership
+- Contact form
+- Footer
+- Buttons
+- Loading, empty, and error states where needed
+
+Store project content and approved company details in structured data files when practical.
+
+## 10. IMAGE AND ASSET MANAGEMENT
+
+Inspect the uploaded PDF and available project assets.
+
+Use approved logo and project imagery where technically feasible.
+
+If image extraction is needed:
+
+1. Extract only the required public-facing assets.
+2. Check image quality and aspect ratio.
+3. Confirm that the image is appropriate for public publication.
+4. Optimize image size and format.
+5. Use descriptive filenames.
+6. Add meaningful alt text.
+7. Keep public assets free from confidential PDF pages or embedded private information.
+
+Do not reference temporary local paths that will not exist after deployment.
+
+Do not hotlink to unreliable third-party image URLs.
+
+Do not claim that an image was extracted from the PDF unless that extraction actually occurred.
+
+If an asset is missing, use an explicit placeholder or request the correct file.
+
+## 11. FUNCTIONAL REQUIREMENTS
+
+Every visible interactive element must work.
+
+Verify:
+
+- Desktop navigation
+- Mobile navigation
+- Language switching
+- Project filtering
+- Project detail interactions
+- Gallery preview and close behavior
+- Contact CTA
+- WhatsApp link
+- Telephone links
+- Email links
+- Contact form validation
+- Back-to-top control if present
+- Responsive menus
+- Keyboard navigation
+- Focus states
+- Browser back/forward navigation where applicable
+
+Do not use placeholder links such as href="#" for elements presented as functional.
+
+If a feature needs a backend, API, external service, or configuration that is unavailable, document the requirement instead of faking the feature.
+
+## 12. SEO AND SOCIAL SHARING
+
+Implement bilingual-friendly SEO foundations:
+
+- Meaningful page titles
+- Meta descriptions
+- Canonical URL configuration when the final domain is known
+- Open Graph metadata
+- Social sharing image configuration
+- Semantic HTML
+- Descriptive headings
+- Image alt text
+- Robots and sitemap configuration where appropriate
+- Human-readable routes if multiple pages are used
+- Favicon using the approved brand asset
+
+Do not invent a domain name.
+
+Since the domain is undecided, use a clearly documented placeholder configuration. Do not publish a fake canonical domain or misleading production URL.
+
+Use structured data only when its information is supported and accurate. Do not add fake reviews, ratings, awards, or unsupported company details.
+
+## 13. PERFORMANCE, ACCESSIBILITY, AND SECURITY
+
+Performance:
+
+- Optimize images.
+- Lazy-load below-the-fold images.
+- Avoid unnecessary libraries.
+- Reduce layout shifts.
+- Avoid blocking animations.
+- Use responsive images where practical.
+- Ensure the main content is visible quickly on mobile connections.
+
+Accessibility:
+
+- Use semantic HTML.
+- Provide keyboard-accessible navigation.
+- Maintain readable contrast.
+- Label all form fields.
+- Use visible focus indicators.
+- Add appropriate accessible names to icon buttons.
+- Ensure Bengali and English text remain readable.
+- Respect reduced-motion preferences.
+
+Security:
+
+- Do not add API secrets, service-role keys, private credentials, or confidential business data to client-side code.
+- Do not create unnecessary authentication or database dependencies.
+- Do not expose sensitive information from the source PDF.
+- Do not introduce a backend, database, or authentication system unless required and explicitly approved.
+- Do not place credentials in GitHub commits.
+- If environment variables are necessary, use the project's existing conventions and provide a safe example file without real secrets.
+
+## 14. HOSTING AND DEPLOYMENT READINESS
+
+Prepare the website for GitHub and Cloudflare Pages deployment.
+
+First inspect the actual project configuration before assuming build commands or output folders.
+
+For a standard Vite project, the expected build command is usually:
+
+npm run build
+
+The usual output directory is:
+
+dist
+
+Confirm these values from the actual project files before deployment.
+
+If using client-side routing on Cloudflare Pages, configure the appropriate fallback behavior so refreshing a nested route does not return a 404. Use Cloudflare Pages-compatible configuration, such as a suitable public/_redirects file, only if needed for the selected architecture.
+
+Review response headers where appropriate. Do not introduce overly restrictive Content Security Policy rules that break legitimate site functionality.
+
+Provide a README explaining:
+
+- Project overview
+- Prerequisites
+- Local development
+- Build command
+- Environment variables, if any
+- Asset replacement
+- Language content updates
+- GitHub deployment workflow
+- Cloudflare Pages configuration
+- Domain connection after the domain is selected
+
+Do not claim deployment succeeded unless it has actually been performed and verified.
+
+## 15. DOMAIN AND FUTURE EDITABILITY
+
+The domain is not decided yet.
+
+Therefore:
+
+- Do not hardcode a domain into multiple files.
+- Keep the production site URL in one clearly documented configuration location where practical.
+- Use relative internal links when appropriate.
+- Avoid publishing incorrect canonical URLs.
+- Explain where the final domain must be configured later.
+
+Keep company contact details, language content, projects, and visual assets easy to update.
+
+Do not build an admin panel or CMS unless separately requested.
+
+## 16. TESTING AND QUALITY ASSURANCE
+
+After implementation, perform a complete QA pass.
+
+Check:
+
+1. The application starts successfully.
+2. The production build completes without errors.
+3. No missing imports or broken asset references exist.
+4. No console errors occur during normal use.
+5. No broken images appear.
+6. All internal links work.
+7. Language switching works across all major sections.
+8. The mobile menu opens and closes correctly.
+9. Project filters return the correct items.
+10. WhatsApp links use +8801754158358.
+11. Contact form behavior is honest and functional.
+12. Layouts work on mobile, tablet, and desktop.
+13. Text does not overflow or become clipped.
+14. Logo proportions remain intact.
+15. SEO metadata is present and does not contain a fake domain.
+16. Sensitive information from the PDF is not published.
+17. Unsupported claims and invented project details are absent.
+18. The website does not misrepresent ongoing or upcoming projects as completed.
+19. Keyboard navigation and visible focus states work.
+20. The deployment configuration matches the actual project stack.
+
+If browser testing or external service access is unavailable, clearly identify which tests could not be performed. Never fabricate QA results.
+
+Fix all issues you can reproduce before declaring the website ready.
+
+## 17. REQUIRED DELIVERABLES
+
+Complete the implementation in the current Google AI Studio project.
+
+Deliver:
+
+1. A complete responsive bilingual corporate website.
+2. A reusable, consistent design system.
+3. Properly organized React/TypeScript source files, adapted to the existing project.
+4. Source-grounded company content.
+5. Approved logo and project imagery where available.
+6. Working navigation and language switching.
+7. Functional project filters and gallery interactions.
+8. Correct WhatsApp and approved contact links.
+9. SEO and accessibility foundations.
+10. GitHub and Cloudflare Pages deployment readiness.
+11. A README with beginner-friendly instructions.
+12. A list of company details requiring confirmation.
+13. A concise QA report showing what was tested, what was fixed, and what remains unverified.
+
+## 18. IMPLEMENTATION WORKFLOW
+
+Work in this order:
+
+PHASE 1 — INSPECT
+Inspect the current project, dependencies, file structure, available assets, and uploaded PDF. Identify existing functionality that should be preserved.
+
+PHASE 2 — PLAN
+Summarize the proposed page structure, design direction, asset requirements, and any conflicting or missing company information.
+
+PHASE 3 — BUILD
+Implement the website in the existing project. Do not stop after generating a visual mockup or a static homepage.
+
+PHASE 4 — INTEGRATE
+Connect navigation, translations, project data, approved imagery, contact details, and all implemented interactions.
+
+PHASE 5 — QA
+Run the available development and production checks. Fix reproducible issues and report limitations honestly.
+
+PHASE 6 — DEPLOYMENT PREPARATION
+Prepare GitHub and Cloudflare Pages configuration based on the actual project. Explain any remaining manual steps in simple language.
+
+Do not skip a phase silently.
+
+## 19. FINAL RESPONSE FORMAT
+
+After the work, provide a concise report with:
+
+- What was implemented
+- Main pages and features
+- Source assets used
+- Build/test results
+- Remaining company confirmations
+- Deployment readiness
+- Exact next steps for the user
+
+Separate verified facts from assumptions and unresolved questions.
+
+If any requirement cannot be completed because of missing information, missing assets, or tool limitations, explain the specific blocker and the next action required.
+
+## FINAL INSTRUCTION
+
+Build a genuine, premium, bilingual corporate website for J.H. Development Construction Ltd. using the uploaded JHDCL PDF as the primary source.
+
+Prioritize accuracy, credibility, visual quality, usability, maintainability, and deployment readiness.
+
+Do not invent facts, fabricate functionality, publish confidential source material, or claim that work has been completed without verification.
+
+Start by inspecting the existing project and available assets, then proceed through the implementation workflow.

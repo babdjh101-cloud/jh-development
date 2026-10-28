@@ -1,0 +1,8 @@
+{
+  "name": "J.H. Development Construction Ltd. (JHDCL)",
+  "description": "Official corporate website of J.H. Development Construction Ltd. (JHDCL) — real estate development, infrastructure engineering, dredging, and heavy construction contractor in Bangladesh.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

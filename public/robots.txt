@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Host & Sitemap
+Sitemap: https://jhdcl.com/sitemap.xml

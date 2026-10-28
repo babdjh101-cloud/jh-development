@@ -1,0 +1,860 @@
+# JHDCL — COMPLETE CORPORATE WEBSITE CONTENT EXPANSION & PREMIUM PRESENTATION MASTER PROMPT
+
+## ROLE
+
+Continue the existing JHDCL website project as a senior corporate website architect, premium UI/UX designer, construction-sector content strategist, bilingual information architect, frontend engineer, and QA specialist.
+
+Integrate the following complete business briefing into the existing website while preserving all previous requirements:
+
+- Original PDF as the primary source for existing company information, photographs, official logo, personnel, and documented projects.
+- Premium corporate design with refined 3D-inspired depth.
+- Fully mobile-responsive layouts.
+- Separate pages with meaningful URLs.
+- Correct browser Back/Forward history and sensible scroll restoration.
+- Premium WhatsApp button.
+- English and Bangla language support.
+- Correct personnel photographs, names, and designations.
+- Functional navigation, forms, and project categories.
+- GitHub and Cloudflare Pages deployment readiness.
+
+Do not rebuild a functioning project from scratch unnecessarily. Inspect the existing code, preserve working features, and implement the required improvements.
+
+## 1. OFFICIAL BRAND AND COMPANY PROFILE
+
+Use the supplied company briefing dated 28 October 2026 alongside the previously uploaded `JHDCL Short Profile 17-07-26.pdf`.
+
+The new briefing specifies the company name:
+
+**Jamat Hazera Development Construction Ltd.**
+
+Slogan:
+
+**Committed to Quality, Driven by Integrity**
+
+Established date:
+
+**05 October 2019**
+
+Head Office:
+
+House #45, Road #13, Block #D, Banani, Dhaka-1213, Bangladesh.
+
+Use the original company logo from the source materials.
+
+### Company-name verification
+
+The earlier PDF uses both “J.H. Development Construction Ltd.” and “Jamat Hazera Development Construction Ltd.” The new briefing specifies “Jamat Hazera Development Construction Ltd.”
+
+Use the newly supplied full name as the proposed primary display name, but preserve the discrepancy in the project verification checklist. Ask the company to confirm the exact registered/legal name before publishing formal legal statements, contracts, or legal notices.
+
+Use 05 October 2019 as the establishment date in the new profile draft, noting that it differs from the earlier PDF's founding-year reference and requires company confirmation.
+
+### Welcome message
+
+Create a polished welcome section using the following company-provided statement:
+
+“JHDCL is currently successfully executing projects and providing services in the construction sector, both within the country and internationally.”
+
+The briefing also uses the phrase “Top LEED Constructor Company in Bangladesh.” Treat this as a company-provided marketing claim requiring documentary verification. Do not independently present it as an established ranking, official certification, or verified LEED status.
+
+Do not claim LEED certification unless supporting evidence exists.
+
+## 2. WEBSITE PRESENTATION — MULTI-PHASE EXPERIENCE
+
+Translate the proposed presentation phases into an intuitive corporate website. Do not force the visitor through a mandatory slideshow or sequential wizard just to access normal website pages.
+
+### Phase 1 — Welcome and visitor entry
+
+Create a premium landing experience featuring:
+
+- Company logo and official display name.
+- Slogan.
+- Establishment date after confirmation.
+- Head office address.
+- Welcome message.
+- A refined “Explore Our Company” or “Enter Website” CTA.
+- An introduction to the company's business categories.
+- An optional visitor inquiry entry point.
+
+The visitor entry experience should be elegant, fast, accessible, and mobile-friendly.
+
+### Visitor information and entry form
+
+The briefing proposes collecting:
+
+- Name
+- Rank or designation
+- Organization name
+- WhatsApp number
+- Email address
+- Reason for contacting the company
+
+Implement this as an optional **Visitor Inquiry / Connect with JHDCL** form, not as an intrusive security barrier.
+
+Requirements:
+
+- Explain why the information is requested.
+- Collect only information necessary for the inquiry.
+- Make nonessential fields optional.
+- Provide an appropriate privacy notice.
+- Do not claim to provide physical security verification or identity verification unless a real verified system exists.
+- Do not publish visitor submissions publicly.
+- Do not store submissions in a frontend-only application.
+- Configure a secure backend or approved form service before collecting and transmitting personal information.
+- Until a secure submission service exists, clearly mark the form as requiring configuration.
+
+### Phase 1 — Corporate introduction
+
+Include the company-provided statement about its contracting and dredging experience and international expansion.
+
+Preserve its intended meaning, but do not independently claim a verified international operational history without supporting evidence.
+
+Create an attractive section introducing the company's long-term ambitions and future projects. Clearly label unapproved plans as proposed or planned initiatives.
+
+### Phase 2 — Table of Contents
+
+Provide a well-organized corporate information index linking to dedicated website pages.
+
+The original briefing's page counts are planning estimates for a presentation document. They must not be converted automatically into dozens of thin website pages. Organize information into meaningful web pages, categories, and detailed sections.
+
+## 3. COMPANY INTRODUCTION
+
+Create a dedicated `/about` page.
+
+Include:
+
+- Company overview.
+- Established date.
+- Corporate background.
+- Main service categories.
+- Operating capabilities described in the source materials.
+- Domestic and international business ambitions.
+- Slogan.
+- Relevant approved corporate photographs.
+
+Use the supplied company profile and briefing without inventing additional facts.
+
+## 4. VISION AND MISSION
+
+Create a dedicated `/vision-mission` page or an appropriately structured section within About.
+
+The briefing requests a Vision and Mission page but does not provide final approved vision and mission statements.
+
+Therefore:
+
+- Do not invent statements and publish them as official company policy.
+- Prepare clearly labelled draft suggestions only if needed.
+- Keep draft wording in an approval-required state.
+- Publish the final statements only after company approval.
+
+## 5. FIVE CORE TRADE-LICENCE BUSINESS CATEGORIES
+
+Create a dedicated `/business-categories` overview page, with a separate detail page for each category where useful.
+
+The five categories supplied in the briefing are:
+
+1. First-Class Constructor
+2. Supplier — Import and Export
+3. Development and Landlord
+4. Real Estate, Housing and Green City
+5. Consultancy Services Across Sectors
+
+Use the wording as supplied. Do not imply that a trade licence, registration, qualification, or certification has been verified unless the relevant evidence is available.
+
+### Required category presentation
+
+For each category, prepare a clear corporate summary covering:
+
+- Business overview.
+- Relevant services.
+- Potential customer groups described in the briefing.
+- Applicable project types.
+- Relevant approved photographs.
+- An inquiry CTA.
+- Related detailed service pages.
+
+The briefing requests approximately three additional presentation pages for each category. Translate this into meaningful website content rather than creating unnecessary duplicated pages.
+
+## 6. CONSTRUCTION SERVICES
+
+Create a dedicated `/services/construction` page.
+
+Cover the company's First-Class Constructor category using source-supported information.
+
+Include relevant activities from the source material where documented, such as:
+
+- Building construction.
+- Residential and commercial construction.
+- Roads and highways.
+- Railway-related works.
+- Infrastructure development.
+- Land filling and development.
+- Construction-related project execution.
+- Tender-related construction activities, where supported.
+
+The briefing requests ten additional presentation pages of detailed service information for First-Class Construction and Supplier activities.
+
+Organize this as substantial, well-structured web content, using meaningful subsections, project examples, capability details, and related links. Do not generate ten repetitive or empty pages merely to satisfy the original presentation page count.
+
+## 7. SUPPLY, IMPORT AND EXPORT
+
+Create a dedicated `/services/supply-import-export` page.
+
+Cover the supplier business category and the materials listed in the briefing.
+
+Separate the page into clear sections for:
+
+- Sand supply.
+- Stone and aggregate supply.
+- Local/domestic supply.
+- Imported materials.
+- International sourcing.
+- Construction and infrastructure applications.
+- Supplier inquiries.
+
+Do not claim that every listed material is currently in stock, available in every quantity, or actively imported by the company. Distinguish the business scope described in the briefing from verified current supply capacity.
+
+## 8. SAND SUPPLY — FULL CATALOGUE
+
+Create a dedicated `/materials/sand` page.
+
+Preserve the material categories supplied in the briefing:
+
+- Soil.
+- Vati/local sand.
+- Fill sand.
+- Dredged sand.
+- Fine sand.
+- Medium sand.
+- “Astor” sand — preserve this supplied term until the company confirms its intended technical meaning.
+- Coarse sand.
+- Dumur sand.
+- Crushed sand.
+- Selection sand.
+- Silica sand.
+- Bit sand.
+- Plaster sand.
+- Sea/beach sand.
+- Washed sand.
+
+Organize the catalogue by the applications stated in the briefing:
+
+1. Land development — soil and vati/local sand.
+2. Land filling and reclamation — fill sand, dredged sand, and suitable river sand.
+3. Plastering — fine, medium, and “Astor” sand.
+4. Brick masonry — medium/coarse sand.
+5. Roads and highways — “Astor” and dumur sand, plus crushed aggregate.
+6. Pipe and cable bedding — fine/medium bedding sand.
+7. Infrastructure projects — beach/sea sand, fine aggregate, manufactured sand, and dredged sand for suitable applications.
+8. Heavyweight road applications — stone/crushed sand.
+9. Building construction — selection sand, including the Sylhet/Panchagarh dumur references supplied in the briefing.
+10. Glass manufacturing — silica sand.
+11. Coarse sand — specific-task applications.
+12. Washed sand — specific-task applications.
+
+These are source-provided descriptions. Do not present every material as technically suitable for every use. Add a note that final material selection depends on project specifications, required grading, quality testing, and applicable engineering standards.
+
+Do not invent grain sizes, laboratory results, certifications, prices, stock quantities, or delivery timelines.
+
+## 9. STONE AND AGGREGATE SUPPLY
+
+Create a dedicated `/materials/stone-aggregate` page.
+
+Organize the following lists into readable sections, preserving the briefing's terminology.
+
+### A. Domestic/local materials
+
+- Madhyapara Hard Rock.
+- Local gravel/pebble.
+- River boulder.
+- Local crushed aggregate.
+- Boulder/pebble.
+- Hard rock/granite-type rock.
+- White/decorative stone.
+- Sandstone-type local stone.
+- Limestone.
+- Crushed stone/stone chips.
+- Clay/shale-type rock material.
+
+The briefing repeats river boulder. Consolidate duplicate catalogue entries where appropriate without removing meaningful distinctions.
+
+### B. Indian imported stone
+
+- Indian Pakur.
+- Indian Blackstone.
+- River boulder/boulder stone.
+- Stone chips/crushed stone.
+- Granite.
+- Basalt.
+- Sandstone.
+- Quartzite.
+- Dolomite.
+- Meghalaya stone.
+- Limestone.
+- Armour/riprap stone.
+- Marble.
+- Other stone types from Uttar Pradesh and Madhya Pradesh, as listed in the briefing.
+
+Preserve unclear commercial names pending company confirmation. Do not make unsupported origin or quality claims.
+
+### C. Dubai imported stone
+
+- Gabbro, 10–20 mm and 20–40 mm categories.
+- Crushed gabbro aggregate.
+- Limestone.
+- Armour rock/riprap.
+- Large boulder/rock.
+- Granite.
+
+The listed size categories are briefing-provided categories, not verified inventory.
+
+### D. Bhutanese imported stone
+
+- Granite.
+- Porphyry.
+- Basalt.
+- Sandstone.
+- Limestone.
+- Dolomite.
+- Pebbles/gravel.
+- Gypsum.
+- Bhutanese Sebok.
+- Gabbro, granite and red stone.
+- Marble stone.
+
+Preserve “Sebok” as supplied and flag it for confirmation if its intended commercial meaning is unclear.
+
+### E. European and global materials
+
+- Italy — marble and granite.
+- Greece — premium marble.
+- Spain — marble, limestone and slate.
+- Portugal — granite and limestone.
+- Boulder/andesite.
+- Gravel/crushed stone.
+- Rhyolite.
+- Andesite.
+- Sandstone.
+- Travertine.
+- Slate.
+- Onyx.
+- Soapstone.
+- Raw blocks, cut slabs, tiles, polished stone and finished building stone.
+
+Present the geographical categories as the company's proposed sourcing scope, not as proof that the company currently imports all listed products.
+
+### Catalogue design
+
+Use:
+
+- Clear material categories.
+- Search or filters where useful.
+- Material cards.
+- Approved photographs.
+- A product inquiry CTA.
+- Responsive layouts.
+- A clear statement that availability and specifications must be confirmed.
+
+Do not invent prices or e-commerce checkout functionality.
+
+## 10. LANDLORD, LAND AND LAND DEVELOPMENT
+
+Create a dedicated `/services/land-development` page.
+
+The briefing lists:
+
+- Land purchase.
+- Land sale.
+- Rent.
+- Lease.
+- Mortgage-related activities.
+- Land consultancy.
+- Land development.
+
+Organize the proposed service coverage into these sectors:
+
+1. Private sector.
+2. Government sector.
+3. Industrial sector.
+4. Banking sector.
+5. Foreign sector.
+6. JHDCL's own projects.
+7. Sister-concern companies' projects, where the relationship is confirmed.
+
+The briefing mentions potential sister-concern projects such as:
+
+- Power plants.
+- Eco/green projects.
+- Composite and compliance industries.
+- Hotels and resorts.
+- Industrial parks.
+- Economic zones.
+
+Do not imply that every named development exists, is owned by JHDCL, or is currently operational. Verify ownership, relationships, project status, and legal permissions before publishing a project-specific claim.
+
+Do not offer legal, financial, or mortgage guarantees. Present land-related services in accurate, professional language.
+
+## 11. REAL ESTATE, HOUSING AND GREEN CITY
+
+Create a dedicated `/services/real-estate-housing` page.
+
+Cover the proposed service scope from the briefing:
+
+- Flats.
+- Houses.
+- Buildings.
+- Housing projects.
+- Builders and development activities.
+- Supermarkets.
+- Mega malls.
+- Community centres.
+- Hotels.
+- Motels.
+- Resorts.
+- PWD-related real estate opportunities where verified.
+- International real estate tenders where applicable and supported.
+
+Do not invent currently available properties, plot locations, floor plans, prices, ownership documents, booking availability, or delivery dates.
+
+Use inquiry-based CTAs rather than fake booking functionality.
+
+## 12. FUTURE REAL ESTATE AND GREEN CITY PLANS
+
+Create a dedicated `/future-projects` page or a clearly labelled section within the Projects area.
+
+The briefing lists the following proposed ambitions:
+
+1. A dedicated tower building in every upazila town of Bangladesh, with G+8 and 12,000 square feet specified per tower; total stated as 503 sets.
+2. One Green City in every district town of Bangladesh; total stated as 64.
+3. One Green City in each divisional city of Bangladesh; total stated as 8.
+4. Twelve Multi Mega-Green City projects in selected leading LEED countries across Asia and the European Union.
+5. One Multi Mega-Green City project near Dhaka, Bangladesh.
+
+Preserve these as company-proposed future planning concepts, not confirmed or approved projects.
+
+Important:
+
+- Do not automatically treat the stated totals as independently verified.
+- Do not imply that the projects are financed, approved, acquired, under construction, or guaranteed to be delivered.
+- Clearly label them “Proposed Future Plans — Subject to Feasibility, Land, Approvals, Financing and Company Confirmation.”
+- Do not present the proposed G+8 or 12,000-square-foot specification as an approved engineering design.
+- Do not imply that LEED certification has been obtained for any planned project.
+- Avoid creating fabricated architectural renderings that appear to represent approved actual projects. Concept visuals must be explicitly labelled illustrative proposals.
+
+Create a premium presentation of the ambitions using a map, project concept cards, and a timeline only if the information can be represented accurately.
+
+## 13. CONSULTANCY SERVICES
+
+Create a dedicated `/services/consultancy` page for the briefing's “Consultant Service of all Sector” category.
+
+Use a broad but careful description of the proposed consultancy scope.
+
+Only identify specific regulated professional services, technical certifications, financial advisory capabilities, or legal consultancy services when the company has documented qualifications and authorization.
+
+Where the scope remains unclear, use a confirmation-required draft.
+
+## 14. COMPANY SUMMARY AND TWO CORE BUSINESS AREAS
+
+The briefing identifies First-Class Construction and Supplier activities as especially important.
+
+Create a dedicated `/business-overview` page with:
+
+- Company summary.
+- Construction business summary.
+- Supply/import/export business summary.
+- Land and development summary.
+- Real estate and housing summary.
+- Consultancy summary.
+- Links to detailed service pages.
+
+Highlight construction and supply prominently without making unsupported claims about current revenue, market share, project volume, or inventory.
+
+## 15. EQUIPMENT AND MACHINERY
+
+Create or update `/equipment`.
+
+Use the actual approved equipment and machinery photographs available in the PDF or project assets.
+
+Requirements:
+
+- Match photographs to equipment descriptions only where supported.
+- Use consistent image treatment and meaningful captions.
+- Do not invent equipment ownership, counts, capacities, or specifications.
+- Distinguish owned equipment from rented, subcontracted, partner-supplied, or otherwise available equipment if the source supports those distinctions.
+- If ownership is unclear, avoid stating that the equipment is company-owned.
+- Optimize all imagery for mobile performance.
+
+## 16. LICENSES, IMPORTANT DOCUMENTS AND CONFIDENTIAL RECORDS
+
+The briefing refers to five sets of important licences/documents, dredger documents, dredging/shipping agreements, and joint-venture agreements.
+
+Create an appropriate public-facing credentials or compliance section only for documents explicitly approved for publication.
+
+Do not expose private or sensitive documents, including:
+
+- Bank information.
+- Personal identification.
+- Signatures.
+- Confidential work orders.
+- Private correspondence.
+- Unredacted agreements.
+- Sensitive commercial terms.
+- Joint-venture agreements identified as office-only hard-copy material.
+
+The briefing explicitly states that JV agreements should be shown only as hard copies at the office. Do not publish those agreements or scans on the website.
+
+Do not claim a licence or certification is valid unless its validity and publication are confirmed.
+
+If useful, provide a non-sensitive “Credentials available upon authorized request” statement only after company approval.
+
+## 17. SISTER CONCERNS AND BUSINESS PARTNERS
+
+Create `/partners` or an equivalent dedicated page.
+
+The briefing requests approximately six sets of sister-concern and business-partner information.
+
+Include a company, partner, or sister concern only when the exact name and relationship are supported and approved.
+
+For each approved entry, include:
+
+- Organization name.
+- Confirmed relationship type.
+- Short source-supported description.
+- Approved logo, if available.
+- Approved external link, if supplied.
+
+Do not infer that a project client, supplier, contractor, or named organization is automatically a sister concern or formal partner.
+
+## 18. DREDGING, SHIPPING AND JOINT-VENTURE MATERIAL
+
+Integrate the previously documented dredging and infrastructure activities into the Projects and Services sections.
+
+For dredger documents and shipping agreements:
+
+- Display only approved, non-confidential summaries.
+- Do not publish full contracts or sensitive terms.
+- Do not invent vessel names, dredger capacity, contract values, ownership, or delivery details.
+- Do not present historic project statuses as current without confirmation.
+
+For joint ventures:
+
+- Do not expose agreements identified as office-only hard copies.
+- Display partner names and project summaries only if approved.
+- Confirm the relationship and public-disclosure permission before publishing.
+
+## 19. PROJECT EXPERIENCE, ONGOING WORK AND UPCOMING PROJECTS
+
+Create or update the following pages:
+
+- `/projects`
+- `/projects/completed`
+- `/projects/ongoing`
+- `/projects/upcoming`
+
+Use the existing PDF for documented project examples.
+
+Use the new briefing for proposed future initiatives.
+
+Clearly distinguish:
+
+- Completed and documented work.
+- Ongoing work as stated in the source, pending current confirmation.
+- Upcoming or proposed work.
+- Long-term concepts requiring feasibility and approval.
+
+Do not invent dates, contract values, project progress, locations, client endorsements, or completion claims.
+
+Where project information is insufficient, show a concise entry or omit it until confirmed.
+
+## 20. TEN-YEAR BUSINESS PLANNING AND INTERNATIONAL AMBITIONS
+
+Create a dedicated `/business-roadmap` page or an appropriately named section.
+
+The briefing requests:
+
+- The company's next five years of own-project planning.
+- The company's next ten years of business planning.
+- International expansion.
+- Potential construction and supply opportunities.
+- Future real estate, housing, Green City, land development, and power-related concepts.
+- The company's intended contribution to Bangladesh and international development.
+
+Keep the five-year and ten-year horizons distinct.
+
+Present these as proposed strategic ambitions. Do not invent financial forecasts, annual revenue, investor returns, delivery dates, secured funding, project approvals, or guaranteed outcomes.
+
+If no approved year-by-year roadmap exists, show an aspirational roadmap with clear “Proposed” labels rather than fabricating a precise schedule.
+
+## 21. OWN PROJECTS, LAND, ASSETS AND BUDGETS
+
+Create a dedicated `/our-projects` page or integrate it with the Projects and Future Projects areas.
+
+The briefing asks for marketing presentation of the company's own projects, shares, land, wealth/assets, market capital, and project budgets.
+
+Publish only information that has been explicitly approved for public disclosure.
+
+For every approved own-project entry, provide the fields that are actually available:
+
+- Project name.
+- Project category.
+- Confirmed ownership or relationship.
+- General location.
+- Current status.
+- Short description.
+- Approved images.
+- Budget or project value, only if verified and approved.
+- Relevant inquiry CTA.
+
+Do not invent asset values, company market capitalization, share capital, land area, investment amounts, project budgets, or ownership rights.
+
+Distinguish company-owned assets from partner assets, proposed projects, and assets under consideration.
+
+Do not imply that any project is available for investment unless the company has approved a genuine offering and the relevant legal and commercial information is available.
+
+## 22. PHOTO AND VIDEO GALLERY
+
+Create `/gallery`.
+
+Inspect the PDF, especially its final pages, for genuine personnel, project, equipment, and company photographs.
+
+Match personnel photos with documented names and designations wherever the source supports the match.
+
+Use separate gallery categories where appropriate:
+
+- Company and Leadership.
+- Construction Projects.
+- Dredging and Infrastructure.
+- Equipment and Machinery.
+- Real Estate and Development.
+- Other approved corporate media.
+
+Use genuine source images when available.
+
+Do not use unrelated stock photos as if they show JHDCL projects. Do not fabricate photographs of actual personnel. Concept visuals must be clearly labelled as illustrative.
+
+Check that all published photos and videos are authorized for public display.
+
+## 23. FIFTH-PHASE PRESENTATION — DIVIDE INTO TWO PARTS
+
+Implement the requested final presentation as two logically separate website sections rather than one overloaded page.
+
+### Part A — Projects, assets and budgets
+
+Create a page or section covering:
+
+- Photo and video gallery.
+- Verified own projects.
+- Approved project details.
+- Approved land or development information.
+- Verified and approved project budgets.
+- Upcoming own projects.
+- Relevant real estate and infrastructure concepts.
+
+Keep confidential or unverified asset and financial information private.
+
+### Part B — Invitation, benefits and connection
+
+Create a dedicated `/connect-with-us` page.
+
+Organize it as follows:
+
+**A. Invitation**
+
+Invite customers, buyers, investors, donors, foreign companies, business organizations, and other interested parties to explore appropriate collaboration opportunities.
+
+Use professional language. Do not promise financial returns or guaranteed participation.
+
+**B. Benefits and shared development**
+
+Present company-proposed benefits for staff, directors, investors, partners, customers, the nation, and international stakeholders only where supported.
+
+If the company has not approved specific benefits or programmes, label proposed wording for review rather than claiming established benefits.
+
+**C. Attach / Connect With Us**
+
+Create clearly separated inquiry pathways:
+
+1. Employment opportunities.
+2. Sub-contractor registration or inquiry.
+3. Supplier registration or inquiry.
+4. Project-based investor/donor inquiry, subject to applicable law and company approval.
+5. Investment inquiries for upcoming construction or supply projects, subject to company approval.
+6. Joint-venture inquiries for large construction or supply projects, for eligible companies domestically and internationally.
+7. Inquiries concerning proposed own mega-projects, including land development, real estate, housing, power plants, solar power, and related concepts.
+
+Each pathway should have an appropriate inquiry category and relevant form fields.
+
+Do not claim that jobs are currently available, supplier registration is open, investment is being accepted, or a joint-venture opportunity is confirmed unless the company has verified it.
+
+**D. Benefits and contribution**
+
+Provide an approved, realistic explanation of intended benefits and development objectives. Do not invent guaranteed economic, social, environmental, or investment outcomes.
+
+**E. Final closing**
+
+End with a professional invitation to work together in partnership for the service and development of the country and its people.
+
+Include an appropriate thank-you message and an approved presenter-information section if the presenter details are supplied.
+
+Do not invent a presenter's name, title, or contact details.
+
+## 24. PREMIUM WEBSITE DESIGN AND SEPARATE URLS
+
+Retain the previous premium design requirements.
+
+Use a refined corporate aesthetic with:
+
+- Original logo.
+- Strong visual hierarchy.
+- Premium architecture-inspired layouts.
+- Restrained 3D depth.
+- High-quality approved imagery.
+- Consistent typography and spacing.
+- Polished cards and transitions.
+- Professional calls to action.
+
+Provide dedicated, meaningful URLs for major pages and detailed services. Suggested routes include:
+
+- `/`
+- `/about`
+- `/vision-mission`
+- `/business-categories`
+- `/services`
+- `/services/construction`
+- `/services/supply-import-export`
+- `/services/land-development`
+- `/services/real-estate-housing`
+- `/services/consultancy`
+- `/materials/sand`
+- `/materials/stone-aggregate`
+- `/business-overview`
+- `/equipment`
+- `/leadership`
+- `/partners`
+- `/projects`
+- `/projects/completed`
+- `/projects/ongoing`
+- `/projects/upcoming`
+- `/future-projects`
+- `/business-roadmap`
+- `/our-projects`
+- `/gallery`
+- `/contact`
+- `/connect-with-us`
+
+Adapt this list to the actual implementation. Avoid empty pages, duplicated content, and unnecessarily complex routing.
+
+## 25. MOBILE RESPONSIVENESS AND NAVIGATION
+
+Every page must work correctly on mobile phones, tablets, laptops, and desktop screens.
+
+Requirements:
+
+- Mobile-first layouts.
+- Touch-friendly dropdowns.
+- Accessible navigation.
+- No horizontal overflow.
+- Readable English and Bengali text.
+- Properly sized buttons and forms.
+- Optimized images.
+- Responsive project and material catalogues.
+- Floating WhatsApp button that does not cover content.
+- Reduced-motion support.
+- Fast loading on mobile connections in Bangladesh.
+
+Use proper client-side routing if appropriate for the current project.
+
+Browser Back and Forward must work step by step. Do not override the browser's native history incorrectly. Restore scroll position sensibly and ensure that direct URL access and page refreshes work.
+
+## 26. CONTACT AND WHATSAPP
+
+Use the configured WhatsApp number:
+
+`+8801754158358`
+
+Build a premium WhatsApp button with an accessible label and correctly encoded message link.
+
+Use approved company contact details only.
+
+Provide appropriate contact forms for:
+
+- General company inquiries.
+- Construction projects.
+- Sand and stone supply.
+- Real estate and land development.
+- Employment.
+- Subcontractors.
+- Suppliers.
+- Investors and donors.
+- Joint ventures.
+- Other approved business inquiries.
+
+Collect only necessary personal information. Use a secure configured submission service before transmitting or storing form submissions.
+
+Do not display fake success messages or invent direct personal contact details for company personnel.
+
+## 27. ORGANOGRAM AND LEADERSHIP
+
+Create an organogram page or section showing advisors, the Board of Directors, management, and staff only to the extent documented and approved.
+
+Use actual personnel photographs from the PDF when identifiable and authorized for publication.
+
+For every person, verify:
+
+- Name.
+- Exact designation.
+- Source page.
+- Photo match.
+- Public-display approval.
+
+Do not assume that Chairman, Vice Chairman, or any other role exists unless the source confirms it. Where details conflict or remain uncertain, flag them for company review.
+
+## 28. CONTENT ACCURACY AND LEGAL/FINANCIAL CAUTION
+
+The new briefing includes commercial, property, supply, future investment, international sourcing, and development ambitions.
+
+Do not silently turn a proposal into a confirmed business operation.
+
+Clearly distinguish:
+
+- Verified company information.
+- Company-provided but unverified claims.
+- Current operations requiring confirmation.
+- Proposed future projects.
+- Illustrative design concepts.
+- Information approved for public disclosure.
+
+Do not publish private agreements, bank records, personal documents, confidential commercial data, or unapproved financial information.
+
+Do not promise investment returns, guarantee project delivery, or imply regulatory approval without evidence.
+
+## 29. FINAL QA AND REQUIRED DELIVERABLES
+
+Inspect and update the actual project rather than merely writing a content plan.
+
+Verify:
+
+- All important pages have meaningful content.
+- All routes work directly and through navigation.
+- Browser Back/Forward works correctly.
+- Mobile layouts are responsive.
+- Language switching works throughout.
+- Personnel photos match the correct people where verifiable.
+- Sand and stone categories are organized and searchable where useful.
+- All contact links work.
+- Forms are genuinely configured or clearly marked as requiring configuration.
+- Confidential information is not publicly exposed.
+- Project status labels are accurate.
+- No invented prices, budgets, certifications, ownership claims, or investment guarantees appear.
+- The production build succeeds.
+- GitHub and Cloudflare Pages configuration matches the actual project.
+
+Provide a concise report listing completed work, unresolved company confirmations, required assets, tests actually performed, and remaining deployment steps.
+
+## FINAL INSTRUCTION
+
+Integrate this entire briefing into the existing JHDCL website while preserving the previously supplied premium design, mobile-friendly behavior, separate URLs, browser history, WhatsApp, personnel photo matching, and source-document restrictions.
+
+Build a genuine, maintainable corporate website. Use the company's actual information and approved media, organize the extensive service catalogue professionally, and present future business ambitions transparently as proposals unless confirmed otherwise.
+
+Do not merely generate a mockup. Implement the changes in the current project, inspect the results, fix reproducible issues, and report honestly what has and has not been completed.
