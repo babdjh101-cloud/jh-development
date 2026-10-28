@@ -120,7 +120,7 @@ export const ConnectWithUsPage: React.FC = () => {
 
     if (dispatchMethod === 'whatsapp') {
       const url = `https://wa.me/${COMPANY_CONFIG.whatsappRaw}?text=${encodeURIComponent(content)}`;
-      window.open(url, '_blank', 'noopener,noreferrer');
+      window.location.href = url;
     } else {
       const subject = encodeURIComponent(`[JHDCL Inquiry] ${selectedPathwayObj.titleEn} - ${organization || fullName}`);
       const body = encodeURIComponent(content);
