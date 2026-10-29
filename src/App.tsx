@@ -38,12 +38,14 @@ import { ConsultancyPage } from './pages/ConsultancyPage';
 // Materials & Aggregates Interactive Catalog Pages
 import { SandSupplyPage } from './pages/SandSupplyPage';
 import { StoneAggregatePage } from './pages/StoneAggregatePage';
+import { NavigationHistoryProvider } from './context/NavigationHistoryContext';
 
 export default function App() {
   return (
     <LanguageProvider>
       <BrowserRouter>
-        <ScrollToTop />
+        <NavigationHistoryProvider>
+          <ScrollToTop />
         <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-amber-500 selection:text-slate-950">
           {/* Skip-to-content Link for Accessibility */}
           <a
@@ -125,6 +127,7 @@ export default function App() {
           {/* Smart Floating WhatsApp Action */}
           <WhatsAppFloatingButton />
         </div>
+        </NavigationHistoryProvider>
       </BrowserRouter>
     </LanguageProvider>
   );

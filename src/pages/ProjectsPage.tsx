@@ -1,19 +1,25 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
+import { useNavHistory } from '../context/NavigationHistoryContext';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { PROJECTS_DATA, ProjectItem } from '../data/projects';
 import { Search, MapPin, ArrowRight, CheckCircle2, Clock, Calendar, Info } from 'lucide-react';
 
 export const ProjectsPage: React.FC = () => {
   const { language, t } = useLanguage();
-  const [searchQuery, setSearchQuery] = useState('');
+  const { getListState, saveListState } = useNavHistory();
+  const [searchQuery, setSearchQuery] = useState(() => getListState('projects_query') || '');
+
+  useEffect(() => {
+    saveListState('projects_query', searchQuery);
+  }, [searchQuery, saveListState]);
 
   useEffect(() => {
     document.title =
       language === 'bn'
-        ? 'প্রকল্প পোর্টফোলিও | জে.এইচ. ডেভেলপমেন্ট কনস্ট্রাকশন লিঃ'
-        : 'Projects Portfolio | J.H. Development Construction Ltd. (JHDCL)';
+        ? 'প্রকল্প পোর্টফোলিও | জামাত হাজেরা ডেভেলপমেন্ট কনস্ট্রাকশন লিঃ'
+        : 'Projects Portfolio | Jamat Hazera Development Construction Ltd. (JHDCL)';
   }, [language]);
 
   const filteredProjects = useMemo(() => {

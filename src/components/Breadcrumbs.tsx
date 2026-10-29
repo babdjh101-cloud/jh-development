@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
+import { useNavHistory } from '../context/NavigationHistoryContext';
 import { ChevronRight, ArrowLeft } from 'lucide-react';
 
 export interface BreadcrumbItem {
@@ -19,16 +20,11 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
   fallbackBackUrl = '/projects',
   backLabel,
 }) => {
-  const navigate = useNavigate();
+  const { smartBack } = useNavHistory();
   const { t } = useLanguage();
 
   const handleSmartBack = () => {
-    // Check if there is history in current session window
-    if (window.history.length > 2) {
-      navigate(-1);
-    } else {
-      navigate(fallbackBackUrl);
-    }
+    smartBack(fallbackBackUrl);
   };
 
   return (

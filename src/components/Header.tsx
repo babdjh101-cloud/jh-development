@@ -16,45 +16,49 @@ import {
   Calendar,
   Layers,
   Sparkles,
+  Building2,
+  Handshake,
+  Camera,
   Send,
+  Anchor,
+  HardHat,
+  Truck,
 } from 'lucide-react';
 
 export const Header: React.FC = () => {
   const { language, toggleLanguage, t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [projectsDropdownOpen, setProjectsDropdownOpen] = useState(false);
-  const [materialsDropdownOpen, setMaterialsDropdownOpen] = useState(false);
+  const [moreDropdownOpen, setMoreDropdownOpen] = useState(false);
   const [mobileProjectsOpen, setMobileProjectsOpen] = useState(false);
-  const [mobileMaterialsOpen, setMobileMaterialsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileMoreOpen, setMobileMoreOpen] = useState(false);
+  
+  const servicesDropdownRef = useRef<HTMLDivElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const materialsDropdownRef = useRef<HTMLDivElement>(null);
+  const moreDropdownRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
-
-  // Scroll detection
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // Close menus on route change
   useEffect(() => {
     setMobileMenuOpen(false);
+    setServicesDropdownOpen(false);
     setProjectsDropdownOpen(false);
-    setMaterialsDropdownOpen(false);
+    setMoreDropdownOpen(false);
   }, [location.pathname]);
 
   // Click outside to close dropdowns
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
+      if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(event.target as Node)) {
+        setServicesDropdownOpen(false);
+      }
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setProjectsDropdownOpen(false);
       }
-      if (materialsDropdownRef.current && !materialsDropdownRef.current.contains(event.target as Node)) {
-        setMaterialsDropdownOpen(false);
+      if (moreDropdownRef.current && !moreDropdownRef.current.contains(event.target as Node)) {
+        setMoreDropdownOpen(false);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -66,8 +70,9 @@ export const Header: React.FC = () => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         setMobileMenuOpen(false);
+        setServicesDropdownOpen(false);
         setProjectsDropdownOpen(false);
-        setMaterialsDropdownOpen(false);
+        setMoreDropdownOpen(false);
       }
     };
     window.addEventListener('keydown', handleKeyDown);
@@ -87,28 +92,33 @@ export const Header: React.FC = () => {
     t.contact.whatsappPrefill
   )}`;
 
-  const isProjectsActive = location.pathname.startsWith('/projects');
-  const isMaterialsActive = location.pathname.startsWith('/materials');
+  const isServicesActive = location.pathname.startsWith('/services');
+  const isProjectsActive = location.pathname.startsWith('/projects') || location.pathname.startsWith('/future-projects');
+  const isMoreActive =
+    location.pathname.startsWith('/materials') ||
+    location.pathname.startsWith('/gallery') ||
+    location.pathname.startsWith('/partners') ||
+    location.pathname.startsWith('/connect-with-us');
 
   const navClass = ({ isActive }: { isActive: boolean }) =>
-    `text-sm font-medium transition-colors relative py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded ${
+    `text-xs xl:text-sm font-medium transition-colors relative py-1.5 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded ${
       isActive
-        ? 'text-amber-400 font-semibold after:content-[\'\'] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-amber-400'
-        : 'text-slate-300 hover:text-white after:content-[\'\'] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-amber-500 hover:after:w-full after:transition-all'
+        ? 'text-amber-400 font-semibold after:content-[\'\'] after:absolute after:-bottom-0.5 after:left-0 after:w-full after:h-[2px] after:bg-amber-400'
+        : 'text-slate-300 hover:text-white after:content-[\'\'] after:absolute after:-bottom-0.5 after:left-0 after:w-0 after:h-[2px] after:bg-amber-500 hover:after:w-full after:transition-all'
     }`;
 
   return (
-    <header className="relative w-full z-40 bg-slate-950 border-b border-slate-800 shadow-md py-3.5 sm:py-4">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
+    <header className="sticky top-0 w-full z-40 bg-slate-950/95 backdrop-blur-md border-b border-slate-800/80 shadow-2xl py-2.5 sm:py-3 transition-all">
+      <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between gap-2 xl:gap-4">
           
           {/* Brand Identity / Official Logo */}
           <Link
             to="/"
-            className="flex items-center gap-3.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded-md"
+            className="flex items-center gap-2.5 sm:gap-3 group shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded-md"
             aria-label="Jamat Hazera Development Construction Ltd. Home"
           >
-            <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-amber-500/40 bg-black flex-shrink-0 group-hover:border-amber-400 transition-colors shadow-lg p-0.5">
+            <div className="relative w-9 h-9 sm:w-11 sm:h-11 rounded-full overflow-hidden border border-amber-500/50 bg-black shrink-0 group-hover:border-amber-400 transition-colors shadow-lg p-0.5">
               <img
                 src={COMPANY_CONFIG.logoPath}
                 alt="JHDCL Official Emblem"
@@ -116,15 +126,15 @@ export const Header: React.FC = () => {
                 loading="eager"
               />
             </div>
-            <div className="flex flex-col">
-              <span className="text-base sm:text-lg font-bold text-white tracking-tight group-hover:text-amber-400 transition-colors leading-tight">
+            <div className="flex flex-col max-w-[200px] sm:max-w-[280px] xl:max-w-none">
+              <span className="text-xs sm:text-sm xl:text-base font-bold text-white tracking-tight group-hover:text-amber-400 transition-colors leading-tight">
                 {language === 'bn' ? COMPANY_CONFIG.nameBn : COMPANY_CONFIG.nameEn}
               </span>
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-5 xl:gap-6" aria-label="Main Navigation">
+          {/* Desktop Navigation (Streamlined to fit perfectly at all widths 1024px+) */}
+          <nav className="hidden lg:flex items-center gap-3 xl:gap-5 shrink-0" aria-label="Main Navigation">
             <NavLink to="/" end className={navClass}>
               {t.nav.home}
             </NavLink>
@@ -133,9 +143,79 @@ export const Header: React.FC = () => {
               {t.nav.about}
             </NavLink>
 
-            <NavLink to="/services" className={navClass}>
-              {t.nav.services}
-            </NavLink>
+            {/* Services Dropdown */}
+            <div
+              className="relative"
+              ref={servicesDropdownRef}
+              onMouseEnter={() => setServicesDropdownOpen(true)}
+              onMouseLeave={() => setServicesDropdownOpen(false)}
+            >
+              <button
+                type="button"
+                onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
+                className={`inline-flex items-center gap-1 text-xs xl:text-sm font-medium transition-colors py-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded ${
+                  isServicesActive ? 'text-amber-400 font-semibold' : 'text-slate-300 hover:text-white'
+                }`}
+                aria-expanded={servicesDropdownOpen}
+                aria-haspopup="true"
+              >
+                <span>{t.nav.services}</span>
+                <ChevronDown
+                  className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                    servicesDropdownOpen ? 'rotate-180 text-amber-400' : 'text-slate-400'
+                  }`}
+                />
+              </button>
+
+              {servicesDropdownOpen && (
+                <div className="absolute top-full left-0 w-64 pt-2 z-50 animate-in fade-in zoom-in-95 duration-150">
+                  <div className="p-2 rounded-xl bg-slate-900 border border-slate-700/80 shadow-2xl backdrop-blur-xl space-y-1">
+                    <Link
+                      to="/services"
+                      className="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold text-amber-400 hover:bg-slate-800 rounded-md transition-colors"
+                    >
+                      <Sparkles className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                      <span>{language === 'bn' ? 'সকল ১০টি বিভাগ দেখুন' : 'All 10 Core Sectors'}</span>
+                    </Link>
+                    <Link
+                      to="/services/construction"
+                      className="flex items-center gap-2.5 px-3 py-1.5 text-xs font-medium text-slate-200 hover:text-amber-400 hover:bg-slate-800 rounded-md transition-colors"
+                    >
+                      <Building2 className="w-3.5 h-3.5 text-sky-400 shrink-0" />
+                      <span>{language === 'bn' ? '১ম শ্রেণির সিভিল নির্মাণ' : '1st-Class Construction'}</span>
+                    </Link>
+                    <Link
+                      to="/services/supply-import-export"
+                      className="flex items-center gap-2.5 px-3 py-1.5 text-xs font-medium text-slate-200 hover:text-amber-400 hover:bg-slate-800 rounded-md transition-colors"
+                    >
+                      <Truck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                      <span>{language === 'bn' ? 'আমদানি ও সরবরাহ বিভাগ' : 'Import & Aggregate Supply'}</span>
+                    </Link>
+                    <Link
+                      to="/services/land-development"
+                      className="flex items-center gap-2.5 px-3 py-1.5 text-xs font-medium text-slate-200 hover:text-amber-400 hover:bg-slate-800 rounded-md transition-colors"
+                    >
+                      <Anchor className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                      <span>{language === 'bn' ? 'ভূমি উন্নয়ন ও নদী ড্রেজিং' : 'Dredging & Land Dev.'}</span>
+                    </Link>
+                    <Link
+                      to="/services/real-estate-housing"
+                      className="flex items-center gap-2.5 px-3 py-1.5 text-xs font-medium text-slate-200 hover:text-amber-400 hover:bg-slate-800 rounded-md transition-colors"
+                    >
+                      <HardHat className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
+                      <span>{language === 'bn' ? 'রিয়েল এস্টেট ও আবাসন' : 'Real Estate & Housing'}</span>
+                    </Link>
+                    <Link
+                      to="/services/consultancy"
+                      className="flex items-center gap-2.5 px-3 py-1.5 text-xs font-medium text-slate-200 hover:text-amber-400 hover:bg-slate-800 rounded-md transition-colors"
+                    >
+                      <Sparkles className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                      <span>{language === 'bn' ? 'প্রকৌশল ও কনসালটেন্সি' : 'Consultancy & Design'}</span>
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
 
             {/* Projects Dropdown Menu */}
             <div
@@ -147,7 +227,7 @@ export const Header: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setProjectsDropdownOpen(!projectsDropdownOpen)}
-                className={`inline-flex items-center gap-1 text-sm font-medium transition-colors py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded ${
+                className={`inline-flex items-center gap-1 text-xs xl:text-sm font-medium transition-colors py-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded ${
                   isProjectsActive ? 'text-amber-400 font-semibold' : 'text-slate-300 hover:text-white'
                 }`}
                 aria-expanded={projectsDropdownOpen}
@@ -155,108 +235,53 @@ export const Header: React.FC = () => {
               >
                 <span>{t.nav.projects}</span>
                 <ChevronDown
-                  className={`w-4 h-4 transition-transform duration-200 ${
+                  className={`w-3.5 h-3.5 transition-transform duration-200 ${
                     projectsDropdownOpen ? 'rotate-180 text-amber-400' : 'text-slate-400'
                   }`}
                 />
               </button>
 
-              {/* Dropdown Card */}
               {projectsDropdownOpen && (
                 <div className="absolute top-full left-0 w-60 pt-2 z-50 animate-in fade-in zoom-in-95 duration-150">
-                  <div className="p-2 rounded-lg bg-slate-900 border border-slate-700/80 shadow-2xl backdrop-blur-xl space-y-1">
+                  <div className="p-2 rounded-xl bg-slate-900 border border-slate-700/80 shadow-2xl backdrop-blur-xl space-y-1">
                     <Link
                       to="/projects"
                       className="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold text-slate-200 hover:text-amber-400 hover:bg-slate-800 rounded-md transition-colors"
                     >
-                      <FolderKanban className="w-4 h-4 text-amber-400 flex-shrink-0" />
+                      <FolderKanban className="w-4 h-4 text-amber-400 shrink-0" />
                       <span>{t.nav.projectsDropdown.all}</span>
                     </Link>
 
                     <Link
                       to="/projects/completed"
-                      className="flex items-center gap-2.5 px-3 py-2 text-xs font-medium text-slate-300 hover:text-emerald-400 hover:bg-slate-800 rounded-md transition-colors"
+                      className="flex items-center gap-2.5 px-3 py-1.5 text-xs font-medium text-slate-300 hover:text-emerald-400 hover:bg-slate-800 rounded-md transition-colors"
                     >
-                      <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                       <span>{t.nav.projectsDropdown.completed}</span>
                     </Link>
 
                     <Link
                       to="/projects/ongoing"
-                      className="flex items-center gap-2.5 px-3 py-2 text-xs font-medium text-slate-300 hover:text-amber-400 hover:bg-slate-800 rounded-md transition-colors"
+                      className="flex items-center gap-2.5 px-3 py-1.5 text-xs font-medium text-slate-300 hover:text-amber-400 hover:bg-slate-800 rounded-md transition-colors"
                     >
-                      <Clock className="w-4 h-4 text-amber-400 flex-shrink-0" />
+                      <Clock className="w-4 h-4 text-amber-400 shrink-0" />
                       <span>{t.nav.projectsDropdown.ongoing}</span>
                     </Link>
 
                     <Link
                       to="/projects/upcoming"
-                      className="flex items-center gap-2.5 px-3 py-2 text-xs font-medium text-slate-300 hover:text-sky-400 hover:bg-slate-800 rounded-md transition-colors"
+                      className="flex items-center gap-2.5 px-3 py-1.5 text-xs font-medium text-slate-300 hover:text-sky-400 hover:bg-slate-800 rounded-md transition-colors"
                     >
-                      <Calendar className="w-4 h-4 text-sky-400 flex-shrink-0" />
+                      <Calendar className="w-4 h-4 text-sky-400 shrink-0" />
                       <span>{t.nav.projectsDropdown.upcoming}</span>
                     </Link>
 
                     <Link
                       to="/future-projects"
-                      className="flex items-center gap-2.5 px-3 py-2 text-xs font-medium text-amber-400 hover:bg-slate-800 rounded-md transition-colors border-t border-slate-800 pt-2"
+                      className="flex items-center gap-2.5 px-3 py-1.5 text-xs font-medium text-amber-400 hover:bg-slate-800 rounded-md transition-colors border-t border-slate-800 pt-1.5"
                     >
-                      <Sparkles className="w-4 h-4 text-amber-400 flex-shrink-0" />
+                      <Sparkles className="w-4 h-4 text-amber-400 shrink-0" />
                       <span>{language === 'bn' ? 'ভবিষ্যৎ পরিকল্পনা' : 'Proposed Future Plans'}</span>
-                    </Link>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Materials Dropdown Menu */}
-            <div
-              className="relative"
-              ref={materialsDropdownRef}
-              onMouseEnter={() => setMaterialsDropdownOpen(true)}
-              onMouseLeave={() => setMaterialsDropdownOpen(false)}
-            >
-              <button
-                type="button"
-                onClick={() => setMaterialsDropdownOpen(!materialsDropdownOpen)}
-                className={`inline-flex items-center gap-1 text-sm font-medium transition-colors py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded ${
-                  isMaterialsActive ? 'text-amber-400 font-semibold' : 'text-slate-300 hover:text-white'
-                }`}
-                aria-expanded={materialsDropdownOpen}
-                aria-haspopup="true"
-              >
-                <span>{language === 'bn' ? 'নির্মাণ সামগ্রী' : 'Materials'}</span>
-                <ChevronDown
-                  className={`w-4 h-4 transition-transform duration-200 ${
-                    materialsDropdownOpen ? 'rotate-180 text-amber-400' : 'text-slate-400'
-                  }`}
-                />
-              </button>
-
-              {materialsDropdownOpen && (
-                <div className="absolute top-full left-0 w-64 pt-2 z-50 animate-in fade-in zoom-in-95 duration-150">
-                  <div className="p-2 rounded-lg bg-slate-900 border border-slate-700/80 shadow-2xl backdrop-blur-xl space-y-1">
-                    <Link
-                      to="/materials/sand"
-                      className="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold text-slate-200 hover:text-amber-400 hover:bg-slate-800 rounded-md transition-colors"
-                    >
-                      <Layers className="w-4 h-4 text-amber-400 flex-shrink-0" />
-                      <span>{language === 'bn' ? 'বালু ও মাটি ক্যাটালগ (১৫ প্রকার)' : 'Sand & Soil Catalog (15 Types)'}</span>
-                    </Link>
-
-                    <Link
-                      to="/materials/stone-aggregate"
-                      className="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold text-slate-200 hover:text-amber-400 hover:bg-slate-800 rounded-md transition-colors"
-                    >
-                      <Layers className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                      <span>{language === 'bn' ? 'পাথর ও অ্যাগ্রিগেট (দুবাই ও পাকুড়)' : 'Stone Aggregates (Dubai & Pakur)'}</span>
-                    </Link>
-
-                    <Link
-                      to="/services/supply-import-export"
-                      className="flex items-center gap-2.5 px-3 py-2 text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800 rounded-md transition-colors border-t border-slate-800 pt-2"
-                    >
-                      <span>{language === 'bn' ? 'আমদানি-রপ্তানি বিভাগ' : 'Supply & Import Division'}</span>
                     </Link>
                   </div>
                 </div>
@@ -271,40 +296,93 @@ export const Header: React.FC = () => {
               {t.nav.leadership}
             </NavLink>
 
-            <NavLink to="/gallery" className={navClass}>
-              {t.nav.gallery}
-            </NavLink>
+            {/* More Mega Dropdown (Cleanly houses Materials, Gallery, Partners, Connect Portal) */}
+            <div
+              className="relative"
+              ref={moreDropdownRef}
+              onMouseEnter={() => setMoreDropdownOpen(true)}
+              onMouseLeave={() => setMoreDropdownOpen(false)}
+            >
+              <button
+                type="button"
+                onClick={() => setMoreDropdownOpen(!moreDropdownOpen)}
+                className={`inline-flex items-center gap-1 text-xs xl:text-sm font-medium transition-colors py-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded ${
+                  isMoreActive ? 'text-amber-400 font-semibold' : 'text-slate-300 hover:text-white'
+                }`}
+                aria-expanded={moreDropdownOpen}
+                aria-haspopup="true"
+              >
+                <span>{language === 'bn' ? 'আরও ▾' : 'More'}</span>
+                <ChevronDown
+                  className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                    moreDropdownOpen ? 'rotate-180 text-amber-400' : 'text-slate-400'
+                  }`}
+                />
+              </button>
+
+              {moreDropdownOpen && (
+                <div className="absolute top-full left-0 w-64 pt-2 z-50 animate-in fade-in zoom-in-95 duration-150">
+                  <div className="p-2 rounded-xl bg-slate-900 border border-slate-700/80 shadow-2xl backdrop-blur-xl space-y-1">
+                    <Link
+                      to="/materials/sand"
+                      className="flex items-center gap-2.5 px-3 py-1.5 text-xs font-medium text-slate-200 hover:text-amber-400 hover:bg-slate-800 rounded-md transition-colors"
+                    >
+                      <Layers className="w-4 h-4 text-amber-400 shrink-0" />
+                      <span>{language === 'bn' ? 'বালু ও মাটি ক্যাটালগ (১৫ প্রকার)' : 'Sand & Soil Catalog'}</span>
+                    </Link>
+
+                    <Link
+                      to="/materials/stone-aggregate"
+                      className="flex items-center gap-2.5 px-3 py-1.5 text-xs font-medium text-slate-200 hover:text-emerald-400 hover:bg-slate-800 rounded-md transition-colors"
+                    >
+                      <Layers className="w-4 h-4 text-emerald-400 shrink-0" />
+                      <span>{language === 'bn' ? 'পাথর ও অ্যাগ্রিগেট (দুবাই ও পাকুড়)' : 'Stone Aggregates'}</span>
+                    </Link>
+
+                    <Link
+                      to="/gallery"
+                      className="flex items-center gap-2.5 px-3 py-1.5 text-xs font-medium text-slate-200 hover:text-amber-400 hover:bg-slate-800 rounded-md transition-colors"
+                    >
+                      <Camera className="w-4 h-4 text-amber-400 shrink-0" />
+                      <span>{t.nav.gallery}</span>
+                    </Link>
+
+                    <Link
+                      to="/partners"
+                      className="flex items-center gap-2.5 px-3 py-1.5 text-xs font-medium text-slate-200 hover:text-amber-400 hover:bg-slate-800 rounded-md transition-colors"
+                    >
+                      <Handshake className="w-4 h-4 text-sky-400 shrink-0" />
+                      <span>{language === 'bn' ? 'সহযোগী ও J-V অংশীদার' : 'Sister Concerns & J-Vs'}</span>
+                    </Link>
+
+                    <Link
+                      to="/connect-with-us"
+                      className="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold text-amber-400 hover:bg-slate-800 rounded-md transition-colors border-t border-slate-800 pt-2"
+                    >
+                      <Send className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                      <span>{language === 'bn' ? 'কর্পোরেট ইনকোয়ারি পোর্টাল' : 'Connect With Us (7 Pathways)'}</span>
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
 
             <NavLink to="/contact" className={navClass}>
               {t.nav.contact}
             </NavLink>
-
-            {/* Dedicated Connect Portal */}
-            <NavLink
-              to="/connect-with-us"
-              className={({ isActive }) =>
-                `text-xs font-bold px-3 py-1.5 rounded transition-all ${
-                  isActive
-                    ? 'bg-amber-400 text-slate-950 shadow-md'
-                    : 'text-amber-400 bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/30'
-                }`
-              }
-            >
-              {language === 'bn' ? 'কানেক্ট' : 'Connect'}
-            </NavLink>
           </nav>
 
-          {/* Right Action Cluster: Language Switcher + WhatsApp CTA */}
-          <div className="hidden sm:flex items-center gap-3">
+          {/* Right Action Cluster: Perfectly proportioned to NEVER overflow on 1024px-4K */}
+          <div className="hidden sm:flex items-center gap-2 xl:gap-2.5 shrink-0">
             {/* Language Switcher */}
             <button
               onClick={toggleLanguage}
               type="button"
-              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-slate-200 bg-slate-900 hover:bg-slate-800 border border-slate-700 hover:border-slate-600 rounded-md transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+              className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-semibold text-slate-200 bg-slate-900/90 hover:bg-slate-800 border border-slate-700 hover:border-slate-600 rounded-md transition-all tap-effect"
               aria-label="Toggle language between English and Bangla"
               title={language === 'en' ? 'বাংলা ভাষায় দেখুন' : 'Switch to English'}
             >
-              <Globe className="w-3.5 h-3.5 text-amber-400" />
+              <Globe className="w-3.5 h-3.5 text-amber-400 shrink-0" />
               <span>{t.nav.switchLang}</span>
             </button>
 
@@ -313,30 +391,30 @@ export const Header: React.FC = () => {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold text-slate-950 bg-amber-400 hover:bg-amber-300 rounded-md transition-all shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-slate-950 bg-amber-400 hover:bg-amber-300 rounded-md transition-all shadow-sm btn-sheen tap-effect shrink-0"
               title="Chat directly with JHDCL on WhatsApp"
             >
-              <MessageSquare className="w-3.5 h-3.5 text-slate-950" />
+              <MessageSquare className="w-3.5 h-3.5 text-slate-950 shrink-0" />
               <span>WhatsApp</span>
             </a>
 
-            {/* Phone Quick Dial */}
+            {/* Phone Quick Dial: Responsively displays full text on xl+, icon pill on lg to prevent edge clipping */}
             <a
               href={`tel:${COMPANY_CONFIG.whatsappRaw}`}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-800 border border-slate-700 rounded-md transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+              className="inline-flex items-center gap-1.5 px-2.5 xl:px-3 py-1.5 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-800 border border-slate-700 rounded-md transition-all tap-effect shrink-0"
               title={`Call Official Desk: ${COMPANY_CONFIG.whatsappFormatted}`}
             >
-              <Phone className="w-3.5 h-3.5 text-amber-400" />
-              <span className="font-mono text-[11px]">{COMPANY_CONFIG.whatsappFormatted}</span>
+              <Phone className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+              <span className="hidden xl:inline font-mono text-[11px] whitespace-nowrap">{COMPANY_CONFIG.whatsappFormatted}</span>
             </a>
           </div>
 
           {/* Mobile Menu & Language Toggle */}
-          <div className="flex items-center gap-2 lg:hidden">
+          <div className="flex items-center gap-2 lg:hidden shrink-0">
             <button
               onClick={toggleLanguage}
               type="button"
-              className="px-2.5 py-1 text-xs font-semibold text-slate-300 bg-slate-900 border border-slate-700 rounded-md"
+              className="px-2.5 py-1 text-xs font-semibold text-slate-300 bg-slate-900 border border-slate-700 rounded-md tap-effect"
               aria-label="Toggle language"
             >
               {t.nav.switchLang}
@@ -345,11 +423,11 @@ export const Header: React.FC = () => {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               type="button"
-              className="p-2 text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+              className="p-1.5 text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 tap-effect"
               aria-expanded={mobileMenuOpen}
               aria-label="Toggle Navigation Menu"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
@@ -357,7 +435,7 @@ export const Header: React.FC = () => {
 
       {/* Mobile Drawer Navigation (Touch-Friendly Dropdown) */}
       {mobileMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 right-0 max-h-[85vh] bg-slate-950/98 backdrop-blur-xl border-t border-b border-slate-800 px-5 py-6 overflow-y-auto shadow-2xl z-50 flex flex-col justify-between">
+        <div className="lg:hidden absolute top-full left-0 right-0 max-h-[85vh] bg-slate-950/98 backdrop-blur-2xl border-t border-b border-slate-800 px-5 py-6 overflow-y-auto shadow-2xl z-50 flex flex-col justify-between">
           <nav className="flex flex-col space-y-1">
             <Link
               to="/"
@@ -375,13 +453,65 @@ export const Header: React.FC = () => {
               <ChevronRight className="w-4 h-4 text-slate-500" />
             </Link>
 
-            <Link
-              to="/services"
-              className="flex items-center justify-between px-3.5 py-2.5 text-sm font-medium text-slate-200 hover:text-amber-400 hover:bg-slate-900/60 rounded-md"
-            >
-              <span>{t.nav.services}</span>
-              <ChevronRight className="w-4 h-4 text-slate-500" />
-            </Link>
+            {/* Mobile Services Submenu */}
+            <div className="rounded-md bg-slate-900/40 border border-slate-800/80 overflow-hidden">
+              <button
+                type="button"
+                onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                className="w-full flex items-center justify-between px-3.5 py-2.5 text-sm font-medium text-slate-200 hover:text-amber-400"
+              >
+                <span className="flex items-center gap-2">
+                  <HardHat className="w-4 h-4 text-amber-400" />
+                  <span>{t.nav.services}</span>
+                </span>
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform duration-200 ${
+                    mobileServicesOpen ? 'rotate-180 text-amber-400' : 'text-slate-500'
+                  }`}
+                />
+              </button>
+
+              {mobileServicesOpen && (
+                <div className="px-3 pb-3 space-y-1 bg-slate-950/60 border-t border-slate-800">
+                  <Link
+                    to="/services"
+                    className="block px-3 py-1.5 text-xs font-semibold text-amber-400 hover:underline rounded-md"
+                  >
+                    · {language === 'bn' ? 'সকল ১০টি বিভাগ দেখুন' : 'All 10 Core Sectors'}
+                  </Link>
+                  <Link
+                    to="/services/construction"
+                    className="block px-3 py-1.5 text-xs font-medium text-slate-200 hover:underline rounded-md"
+                  >
+                    · {language === 'bn' ? '১ম শ্রেণির সিভিল নির্মাণ' : '1st-Class Construction'}
+                  </Link>
+                  <Link
+                    to="/services/supply-import-export"
+                    className="block px-3 py-1.5 text-xs font-medium text-slate-200 hover:underline rounded-md"
+                  >
+                    · {language === 'bn' ? 'আমদানি ও সরবরাহ বিভাগ' : 'Import & Aggregate Supply'}
+                  </Link>
+                  <Link
+                    to="/services/land-development"
+                    className="block px-3 py-1.5 text-xs font-medium text-slate-200 hover:underline rounded-md"
+                  >
+                    · {language === 'bn' ? 'ভূমি উন্নয়ন ও নদী ড্রেজিং' : 'Dredging & Land Dev.'}
+                  </Link>
+                  <Link
+                    to="/services/real-estate-housing"
+                    className="block px-3 py-1.5 text-xs font-medium text-slate-200 hover:underline rounded-md"
+                  >
+                    · {language === 'bn' ? 'রিয়েল এস্টেট ও আবাসন' : 'Real Estate & Housing'}
+                  </Link>
+                  <Link
+                    to="/services/consultancy"
+                    className="block px-3 py-1.5 text-xs font-medium text-slate-200 hover:underline rounded-md"
+                  >
+                    · {language === 'bn' ? 'প্রকৌশল ও কনসালটেন্সি' : 'Consultancy & Design'}
+                  </Link>
+                </div>
+              )}
+            </div>
 
             {/* Mobile Projects Submenu Accordion */}
             <div className="rounded-md bg-slate-900/40 border border-slate-800/80 overflow-hidden">
@@ -437,48 +567,6 @@ export const Header: React.FC = () => {
               )}
             </div>
 
-            {/* Mobile Materials Submenu Accordion */}
-            <div className="rounded-md bg-slate-900/40 border border-slate-800/80 overflow-hidden">
-              <button
-                type="button"
-                onClick={() => setMobileMaterialsOpen(!mobileMaterialsOpen)}
-                className="w-full flex items-center justify-between px-3.5 py-2.5 text-sm font-medium text-slate-200 hover:text-amber-400"
-              >
-                <span className="flex items-center gap-2">
-                  <Layers className="w-4 h-4 text-emerald-400" />
-                  <span>{language === 'bn' ? 'নির্মাণ সামগ্রী ক্যাটালগ' : 'Materials Catalogs'}</span>
-                </span>
-                <ChevronDown
-                  className={`w-4 h-4 transition-transform duration-200 ${
-                    mobileMaterialsOpen ? 'rotate-180 text-amber-400' : 'text-slate-500'
-                  }`}
-                />
-              </button>
-
-              {mobileMaterialsOpen && (
-                <div className="px-3 pb-3 space-y-1 bg-slate-950/60 border-t border-slate-800">
-                  <Link
-                    to="/materials/sand"
-                    className="block px-3 py-1.5 text-xs font-medium text-amber-400 hover:underline rounded-md"
-                  >
-                    · {language === 'bn' ? 'বালু ও মাটি ক্যাটালগ (১৫ প্রকার)' : 'Sand & Soil Catalog (15 Types)'}
-                  </Link>
-                  <Link
-                    to="/materials/stone-aggregate"
-                    className="block px-3 py-1.5 text-xs font-medium text-emerald-400 hover:underline rounded-md"
-                  >
-                    · {language === 'bn' ? 'পাথর ও অ্যাগ্রিগেট (দুবাই, পাকুড়)' : 'Stone & Aggregates Catalog'}
-                  </Link>
-                  <Link
-                    to="/services/supply-import-export"
-                    className="block px-3 py-1.5 text-xs font-medium text-slate-300 hover:underline rounded-md"
-                  >
-                    · {language === 'bn' ? 'আমদানি ও সরবরাহ বিভাগ' : 'Supply & Import Division'}
-                  </Link>
-                </div>
-              )}
-            </div>
-
             <Link
               to="/equipment"
               className="flex items-center justify-between px-3.5 py-2.5 text-sm font-medium text-slate-200 hover:text-amber-400 hover:bg-slate-900/60 rounded-md"
@@ -496,18 +584,18 @@ export const Header: React.FC = () => {
             </Link>
 
             <Link
-              to="/partners"
-              className="flex items-center justify-between px-3.5 py-2.5 text-sm font-medium text-slate-200 hover:text-amber-400 hover:bg-slate-900/60 rounded-md"
-            >
-              <span>{language === 'bn' ? 'সহযোগী ও J-V অংশীদার' : 'Sister Concerns & J-V Partners'}</span>
-              <ChevronRight className="w-4 h-4 text-slate-500" />
-            </Link>
-
-            <Link
               to="/gallery"
               className="flex items-center justify-between px-3.5 py-2.5 text-sm font-medium text-slate-200 hover:text-amber-400 hover:bg-slate-900/60 rounded-md"
             >
               <span>{t.nav.gallery}</span>
+              <ChevronRight className="w-4 h-4 text-slate-500" />
+            </Link>
+
+            <Link
+              to="/partners"
+              className="flex items-center justify-between px-3.5 py-2.5 text-sm font-medium text-slate-200 hover:text-amber-400 hover:bg-slate-900/60 rounded-md"
+            >
+              <span>{language === 'bn' ? 'সহযোগী ও J-V অংশীদার' : 'Sister Concerns & J-V Partners'}</span>
               <ChevronRight className="w-4 h-4 text-slate-500" />
             </Link>
 
@@ -533,14 +621,14 @@ export const Header: React.FC = () => {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 py-2.5 px-3 text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white rounded-md text-center transition-colors"
+              className="flex items-center justify-center gap-2 py-2.5 px-3 text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white rounded-md text-center transition-colors tap-effect"
             >
               <MessageSquare className="w-4 h-4" />
               <span>WhatsApp</span>
             </a>
             <a
               href={`tel:${COMPANY_CONFIG.whatsappRaw}`}
-              className="flex items-center justify-center gap-2 py-2.5 px-3 text-xs font-semibold bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 rounded-md text-center transition-colors"
+              className="flex items-center justify-center gap-2 py-2.5 px-3 text-xs font-semibold bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 rounded-md text-center transition-colors tap-effect"
             >
               <Phone className="w-4 h-4 text-amber-400" />
               <span>{t.nav.callNow}</span>
